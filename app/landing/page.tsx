@@ -4,7 +4,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Leaf, Zap, TrendingUp, CheckCircle2, ArrowRight, Home } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { LanguageSelector } from "@/components/language-selector"
 import { Header } from "@/components/header"
 
 export default function LandingPage() {
@@ -127,7 +126,6 @@ export default function LandingPage() {
               <span className="text-lg font-semibold text-white">AgriDiagnose</span>
             </div>
             <div className="flex items-center gap-4 mb-8">
-              <LanguageSelector />
             </div>
           </div>
           <p className="text-sm">{t.landing.footer.desc}</p>
