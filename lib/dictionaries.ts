@@ -45,7 +45,7 @@ export const dictionaries = {
         results: {
             startNew: "Start New Diagnosis",
             diseaseDetails: "Disease Details",
-            treatmentPlan: "7-Day Treatment Plan",
+            treatmentPlan: "Treatment Plan",
             organicSolutions: "Organic Solutions",
             chemicalSolutions: "Chemical Solutions",
             yieldImpact: "Yield Impact Assessment",
@@ -259,7 +259,7 @@ export const dictionaries = {
         results: {
             startNew: "नया निदान शुरू करें",
             diseaseDetails: "बीमारी का विवरण",
-            treatmentPlan: "7-दिवसीय उपचार योजना",
+            treatmentPlan: "उपचार योजना",
             organicSolutions: "जैविक समाधान",
             chemicalSolutions: "रासायनिक समाधान",
             yieldImpact: "उपज प्रभाव आकलन",
@@ -473,7 +473,7 @@ export const dictionaries = {
         results: {
             startNew: "નવું નિદાન શરૂ કરો",
             diseaseDetails: "રોગની વિગતો",
-            treatmentPlan: "7-દિવસીય સારવાર યોજના",
+            treatmentPlan: "સારવાર યોજના",
             organicSolutions: "જૈવિક ઉપાયો",
             chemicalSolutions: "રાસાયણિક ઉપાયો",
             yieldImpact: "ઉપજ પર અસરનું મૂલ્યાંકન",
@@ -687,7 +687,7 @@ export const dictionaries = {
         results: {
             startNew: "नवीन निदान सुरू करा",
             diseaseDetails: "रोगाचा तपशील",
-            treatmentPlan: "7-दिवसीय उपचार योजना",
+            treatmentPlan: "उपचार योजना",
             organicSolutions: "सेंद्रिय उपाय",
             chemicalSolutions: "रासायनिक उपाय",
             yieldImpact: "उत्पादन प्रभाव मूल्यांकन",
@@ -901,7 +901,7 @@ export const dictionaries = {
         results: {
             startNew: "కొత్త నిర్ధారణ ప్రారంభించండి",
             diseaseDetails: "వ్యాధి వివరాలు",
-            treatmentPlan: "7-రోజుల చికిత్స ప్రణాళిక",
+            treatmentPlan: "చికిత్స ప్రణాళిక",
             organicSolutions: "సేంద్రీయ పరిష్కారాలు",
             chemicalSolutions: "రసాయన పరిష్కారాలు",
             yieldImpact: "దిగుబడి ప్రభావ అంచనా",
@@ -1115,7 +1115,7 @@ export const dictionaries = {
         results: {
             startNew: "புதிய நோயறிதலைத் தொடங்குங்கள்",
             diseaseDetails: "நோய் விவரங்கள்",
-            treatmentPlan: "7-நாள் சிகிச்சைத் திட்டம்",
+            treatmentPlan: "சிகிச்சைத் திட்டம்",
             organicSolutions: "இயற்கை தீர்வுகள்",
             chemicalSolutions: "ரசாயன தீர்வுகள்",
             yieldImpact: "மகசூல் தாக்க மதிப்பீடு",
@@ -1329,7 +1329,7 @@ export const dictionaries = {
         results: {
             startNew: "ਨਵਾਂ ਨਿਦਾਨ ਸ਼ੁਰੂ ਕਰੋ",
             diseaseDetails: "ਬਿਮਾਰੀ ਦਾ ਵੇਰਵਾ",
-            treatmentPlan: "7-ਦਿਨ ਦੀ ਇਲਾਜ ਯੋਜਨਾ",
+            treatmentPlan: "ਦੀ ਇਲਾਜ ਯੋਜਨਾ",
             organicSolutions: "ਜੈਵਿਕ ਹੱਲ",
             chemicalSolutions: "ਰਸਾਇਣਕ ਹੱਲ",
             yieldImpact: "ਪੈਦਾਵਾਰ ਪ੍ਰਭਾਵ ਮੁਲਾਂਕਣ",
