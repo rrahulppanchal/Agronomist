@@ -213,6 +213,35 @@ export const dictionaries = {
                 desc: "Empowering farmers with AI-powered disease detection for sustainable agriculture.",
                 copyright: "© 2025 AgriDiagnose. All rights reserved.",
             },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Farmer", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Farmer", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
+            },
         },
     },
     hi: {
@@ -426,6 +455,35 @@ export const dictionaries = {
             footer: {
                 desc: "टिकाऊ कृषि के लिए AI-संचालित रोग निदान के साथ किसानों को सशक्त बनाना।",
                 copyright: "© 2025 AgriDiagnose. सर्वाधिकार सुरक्षित।",
+            },
+            trustedBy: "इन संगठनों द्वारा भरोसा किया गया",
+            metrics: {
+                imagesAnalyzed: "विश्लेषित छवियाँ",
+                diagnosisAccuracy: "निदान सटीकता",
+                countriesServed: "सेवा किए गए देश",
+            },
+            testimonials: {
+                title: "किसान क्या कह रहे हैं",
+                desc: "AgriDiagnose के शुरुआती उपयोगकर्ताओं की वास्तविक प्रतिक्रिया",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "ऐप ने मुझे पत्ती रोग जल्दी पहचानने में मदद की — मैंने अपनी फसल बचाई!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "सरल, तेज़ और सटीक — दिन-प्रतिदिन की जांच के लिए शानदार।" },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "प्रारंभिक त्रि-एज के लिए एक महान उपकरण, इससे पहले कि लैब परीक्षण भेजें।" },
+                },
+            },
+            faq: {
+                title: "अक्सर पूछे जाने वाले प्रश्न",
+                items: {
+                    1: { q: "निदान कितने सटीक है?", a: "हमारा AI उच्च सटीकता प्राप्त करता है लेकिन हम हमेशा उच्च-मूल्य वाली फसलों या अनिश्चित मामलों के लिए स्थानीय विशेषज्ञों के साथ फॉलो-अप करने की सलाह देते हैं।" },
+                    2: { q: "क्या मेरा डेटा निजी है?", a: "हाँ — छवियाँ और मेटाडेटा सुरक्षित रूप से संग्रहीत किए जाते हैं और मॉडल को बेहतर बनाने के लिए उपयोग किए जाते हैं। आप किसी भी समय अपनी सेटिंग्स से अपना डेटा हटा सकते हैं।" },
+                    3: { q: "कौन सी फसलें समर्थित हैं?", a: "हम बहुत सारी फसलों का समर्थन करते हैं और लगातार बढ़ रहे हैं — नवीनतम सूची के लिए फसल चयनकर्ता देखें।" },
+                },
+            },
+            newsletter: {
+                title: "नवीनतम जानकारी पाएं",
+                subtitle: "कृषि सुझाव और अपडेट प्राप्त करें",
+                placeholder: "अपना ईमेल दर्ज करें",
+                button: "सदस्यता लें",
             },
         },
     },
@@ -641,6 +699,35 @@ export const dictionaries = {
                 desc: "ટકાઉ કૃષિ માટે AI-સંચાલિત રોગ નિદાન સાથે ખેડૂતોને સશક્તિકરણ.",
                 copyright: "© 2025 AgriDiagnose. સર્વાધિકાર સુરક્ષિત.",
             },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
+            },
         },
     },
     mr: {
@@ -854,6 +941,35 @@ export const dictionaries = {
             footer: {
                 desc: "शाश्वत शेतीसाठी AI-आधारित रोग निदानासह शेतकऱ्यांना सक्षम करणे.",
                 copyright: "© 2025 AgriDiagnose. सर्व हक्क राखीव.",
+            },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
             },
         },
     },
@@ -1069,6 +1185,35 @@ export const dictionaries = {
                 desc: "స్థిరమైన వ్యవసాయం కోసం AI-ఆధారిత వ్యాధి నిర్ధారణతో రైతులను శక్తివంతం చేయడం.",
                 copyright: "© 2025 AgriDiagnose. సర్వ హక్కులు ప్రత్యేకించబడ్డాయి.",
             },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
+            },
         },
     },
     ta: {
@@ -1283,6 +1428,35 @@ export const dictionaries = {
                 desc: "நிலையான விவசாயத்திற்கான AI-இயங்கும் நோய் கண்டறிதல் மூலம் விவசாயிகளுக்கு அதிகாரம் அளித்தல்.",
                 copyright: "© 2025 AgriDiagnose. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
             },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
+            },
         },
     },
     pa: {
@@ -1496,6 +1670,35 @@ export const dictionaries = {
             footer: {
                 desc: "ਟਿਕਾਊ ਖੇਤੀ ਲਈ AI-ਸੰਚਾਲਿਤ ਰੋਗ ਨਿਦਾਨ ਨਾਲ ਕਿਸਾਨਾਂ ਨੂੰ ਸ਼ਕਤੀ ਪ੍ਰਦਾਨ ਕਰਨਾ।",
                 copyright: "© 2025 AgriDiagnose. ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ।",
+            },
+            trustedBy: "Trusted by",
+            metrics: {
+                imagesAnalyzed: "Images analyzed",
+                diagnosisAccuracy: "Diagnosis accuracy",
+                countriesServed: "Countries served",
+            },
+            testimonials: {
+                title: "What farmers say",
+                desc: "Real feedback from early users of AgriDiagnose",
+                items: {
+                    1: { name: "Hariram", role: "Smallholder", quote: "The app helped me identify a leaf disease quickly — I saved my crop!" },
+                    2: { name: "Ramesh", role: "Commercial Farmer", quote: "Simple, fast and accurate — great for day-to-day checks." },
+                    3: { name: "Ram Gopal", role: "Agronomist", quote: "A great tool for initial triage before sending samples for lab tests." },
+                },
+            },
+            faq: {
+                title: "Frequently asked questions",
+                items: {
+                    1: { q: "How accurate is the diagnosis?", a: "Our AI achieves high accuracy but we always recommend following up with local experts for high-value crops or uncertain cases." },
+                    2: { q: "Is my data private?", a: "Yes — images and metadata are stored securely and used to improve the model. You can delete your data anytime from your account settings." },
+                    3: { q: "Which crops are supported?", a: "We support a wide range of crops and are constantly expanding — check the crop selector for the latest list." },
+                },
+            },
+            newsletter: {
+                title: "Stay in the loop",
+                subtitle: "Get crop tips and product updates",
+                placeholder: "Enter your email",
+                button: "Subscribe",
             },
         },
     },

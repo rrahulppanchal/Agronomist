@@ -122,4 +122,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Decorative animations */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+  }
+  .float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
 }
