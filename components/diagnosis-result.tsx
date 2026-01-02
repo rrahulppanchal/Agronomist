@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { AlertCircle, CheckCircle, MessageSquare, ArrowLeft, Leaf, Droplet, AlertTriangle } from "lucide-react"
+import { useState, useRef } from "react"
+import { AlertCircle, CheckCircle, MessageSquare, ArrowLeft, Leaf, Droplet, AlertTriangle, Download } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExpertChat } from "./expert-chat"
@@ -15,7 +15,57 @@ import { useLanguage } from "@/contexts/language-context"
 
 export function DiagnosisResult({ result, onReset }: DiagnosisResultProps) {
   const [showChat, setShowChat] = useState(false)
+  const reportRef = useRef<HTMLDivElement | null>(null)
   const { t } = useLanguage()
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const downloadReport = async () => {
+    if (!reportRef.current) return
+    setIsDownloading(true)
+    try {
+      // use html-to-image instead of html2canvas for better CSS compatibility
+      // @ts-ignore - dynamic import
+      const { toPng } = await import('html-to-image')
+      // @ts-ignore - dynamic import
+      const { jsPDF } = await import('jspdf')
+
+      const dataUrl = await toPng(reportRef.current, { cacheBust: true, quality: 1, backgroundColor: '#ffffff' })
+      const img = new Image()
+      img.src = dataUrl
+      await new Promise((res, rej) => {
+        img.onload = res
+        img.onerror = rej
+      })
+
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' })
+      const pageWidth = pdf.internal.pageSize.getWidth()
+      const pageHeight = pdf.internal.pageSize.getHeight()
+
+      // Ensure image fills page width (100%). If image height exceeds one page, split into multiple pages.
+      const pxPerPt = img.width / pageWidth
+      const pageHeightPx = Math.floor(pageHeight * pxPerPt)
+      let remainingHeight = img.height
+      let position = 0
+      while (remainingHeight > 0) {
+        const canvasPage = document.createElement('canvas')
+        canvasPage.width = img.width
+        canvasPage.height = Math.min(pageHeightPx, remainingHeight)
+        const ctx = canvasPage.getContext('2d')
+        ctx?.drawImage(img, 0, position, img.width, canvasPage.height, 0, 0, img.width, canvasPage.height)
+        const pageDataUrl = canvasPage.toDataURL('image/png')
+        const renderHeightPt = canvasPage.height / pxPerPt
+        pdf.addImage(pageDataUrl, 'PNG', 0, 0, pageWidth, renderHeightPt)
+        remainingHeight -= canvasPage.height
+        position += canvasPage.height
+        if (remainingHeight > 0) pdf.addPage()
+      }
+      pdf.save(`${(result?.issue || 'report').replace(/\s+/g, '_')}.pdf`)
+    } catch (err) {
+      console.error('PDF download failed', err)
+    } finally {
+      setIsDownloading(false)
+    }
+  }
 
   const confidenceColor = (confidence: number) => {
     if (confidence >= 80) return "text-green-600 bg-green-50"
@@ -39,8 +89,8 @@ export function DiagnosisResult({ result, onReset }: DiagnosisResultProps) {
     return <ExpertChat diagnosis={result} onBack={() => setShowChat(false)} />
   }
 
-  return (
-    <div className="space-y-6">
+  return (<>
+    <div className="space-y-6" ref={reportRef}>
       {/* Header Card */}
       <Card className={`p-6 border-2 shadow-lg ${severityBg(result.severity)}`}>
         <button
@@ -169,14 +219,46 @@ export function DiagnosisResult({ result, onReset }: DiagnosisResultProps) {
         </Card>
       )}
 
-      {/* Expert Chat CTA */}
-      <Button
-        onClick={() => setShowChat(true)}
-        className="w-full bg-green-600 hover:bg-green-700 text-white py-4 font-semibold text-lg flex items-center justify-center gap-2 shadow-lg"
-      >
-        <MessageSquare className="w-5 h-5" />
-        {t.results.askExpert}
-      </Button>
+
     </div>
+    <div className="mt-5 grid w-full grid-cols-2 gap-5">
+  {/* Download Report CTA */}
+  <Button
+    onClick={downloadReport}
+    className="w-full"
+    disabled={isDownloading}
+  >
+    {isDownloading ? (
+      <span className="flex items-center justify-center gap-2">
+        <svg
+          className="w-5 h-5 animate-spin text-gray-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="12" cy="12" r="10" strokeWidth="4" strokeOpacity="0.2" />
+          <path d="M22 12a10 10 0 00-10-10" strokeWidth="4" />
+        </svg>
+        Generating...
+      </span>
+    ) : (
+      <>
+        <Download className="w-5 h-5" />
+        Download Report
+      </>
+    )}
+  </Button>
+
+  {/* Expert Chat CTA */}
+  <Button
+    onClick={() => setShowChat(true)}
+    className="w-full"
+    variant="outline"
+  >
+    <MessageSquare className="w-5 h-5" />
+    {t.results.askExpert}
+  </Button>
+</div>
+  </>
   )
 }
