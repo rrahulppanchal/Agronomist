@@ -15,7 +15,7 @@ export function Header() {
     <header className="bg-white shadow-sm border-b border-green-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo Section */}
-        <Link href="/diagnosis" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity">
           <div className="bg-green-600 p-1.5 md:p-2 rounded-lg">
             <Leaf className="w-5 h-5 md:w-6 md:h-6 text-white" />
           </div>

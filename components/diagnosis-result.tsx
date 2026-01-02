@@ -253,7 +253,6 @@ export function DiagnosisResult({ result, onReset }: DiagnosisResultProps) {
   <Button
     onClick={() => setShowChat(true)}
     className="w-full"
-    variant="outline"
   >
     <MessageSquare className="w-5 h-5" />
     {t.results.askExpert}
