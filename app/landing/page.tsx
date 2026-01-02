@@ -131,7 +131,7 @@ export default function LandingPage() {
               return (
                 <div key={k} className="bg-green-50 rounded-lg p-6 shadow-sm border border-gray-100 text-left">
                   <div className="flex items-start gap-4">
-                    <img src={`https://i.pravatar.cc/48?img=${10 + Number(k)}`} alt="avatar" className="w-12 h-12 rounded-full" />
+                    <img src={`https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png`} alt="avatar" className="w-12 h-12 rounded-full" />
                     <div>
                       <div className="font-semibold text-gray-900">{it.name}</div>
                       <div className="text-xs text-gray-500">{it.role}</div>

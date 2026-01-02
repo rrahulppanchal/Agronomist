@@ -8,6 +8,70 @@ import { useLanguage } from "@/contexts/language-context"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
+// Simple helper to safely escape HTML and convert minimal markdown-like formatting
+function escapeHtml(str: string) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}
+
+function formatMessageToHtml(raw: string) {
+  if (!raw) return ""
+  const escaped = escapeHtml(raw)
+
+  // Bold **text**
+  let s = escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+  // Italic *text*
+  s = s.replace(/\*(.+?)\*/g, "<em>$1</em>")
+
+  // Split into lines and build paragraphs / lists
+  const lines = s.split(/\r?\n/)
+  const out: string[] = []
+  let inList = false
+  let listItems: string[] = []
+  let paraAcc: string[] = []
+
+  const flushParagraph = () => {
+    if (paraAcc.length) {
+      out.push(`<p>${paraAcc.join("<br />")}</p>`)
+      paraAcc = []
+    }
+  }
+
+  const flushList = () => {
+    if (inList && listItems.length) {
+      out.push(`<ol class="list-decimal list-inside">${listItems.map((li) => `<li>${li}</li>`).join("")}</ol>`)
+      listItems = []
+      inList = false
+    }
+  }
+
+  for (const line of lines) {
+    const m = line.match(/^\s*\d+\.\s+(.*)$/)
+    if (m) {
+      flushParagraph()
+      if (!inList) inList = true
+      listItems.push(m[1])
+    } else if (line.trim() === "") {
+      flushList()
+      flushParagraph()
+    } else {
+      if (inList) {
+        flushList()
+      }
+      paraAcc.push(line.trim())
+    }
+  }
+
+  flushList()
+  flushParagraph()
+
+  return out.join("")
+}
+
 interface ExpertChatProps {
   diagnosis: any
   onBack: () => void
@@ -25,7 +89,7 @@ export function ExpertChat({ diagnosis, onBack }: ExpertChatProps) {
     {
       id: "1",
       type: "assistant",
-      content: `${t.expertChat.welcomePre}${diagnosis.issue}${t.expertChat.welcomePost}`,
+      content: formatMessageToHtml(`${t.expertChat.welcomePre}${diagnosis.issue}${t.expertChat.welcomePost}`),
     },
   ])
   const [input, setInput] = useState("")
@@ -47,7 +111,7 @@ export function ExpertChat({ diagnosis, onBack }: ExpertChatProps) {
     const userMessage: Message = {
       id: Date.now().toString(),
       type: "user",
-      content: input,
+      content: escapeHtml(input),
     }
 
     setMessages((prev) => [...prev, userMessage])
@@ -70,7 +134,7 @@ export function ExpertChat({ diagnosis, onBack }: ExpertChatProps) {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: "assistant",
-        content: data.response,
+        content: formatMessageToHtml(data.response),
       }
 
       setMessages((prev) => [...prev, assistantMessage])
@@ -102,7 +166,8 @@ export function ExpertChat({ diagnosis, onBack }: ExpertChatProps) {
                 : "bg-gray-100 text-gray-900 rounded-bl-none"
                 }`}
             >
-              <p className="text-sm">{message.content}</p>
+              {/* <p className="text-sm">{message.content}</p> */}
+              <div dangerouslySetInnerHTML={{ __html: message.content }}></div>
             </div>
           </div>
         ))}
